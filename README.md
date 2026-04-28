@@ -6,7 +6,7 @@ AWS serverless API for storing and processing sensor data from Ruuvi Gateway dev
 
 This API receives environmental sensor data from Ruuvi Gateway devices and stores it in DynamoDB. The system processes multiple Ruuvi sensor tags per gateway transmission, tracking temperature, humidity, pressure, and battery voltage measurements.
 
-Ruuvi Gatway can be [configured to send data to multiple targets](https://docs.ruuvi.com/ruuvi-gateway-firmware/gateway-html-pages/cloud-options/backend-http-s) at the same time, ie. you can continue using Ruuvi Cloud while deploying your private HTTP(S) backend. [Cloudformation template](./cloudformation.yaml) implements AWS API Gateway compatible with Ruuvi Gateway HTTPS spec.
+Ruuvi Gateway can be [configured to send data to multiple targets](https://docs.ruuvi.com/ruuvi-gateway-firmware/gateway-html-pages/cloud-options/backend-http-s) at the same time, ie. you can continue using Ruuvi Cloud while deploying your private HTTP(S) backend. [Cloudformation template](./cloudformation.yaml) implements AWS API Gateway compatible with Ruuvi Gateway HTTPS spec.
 
 API can also be used to query measurement data stored from Ruuvi Gateway. This can be used to build your own webUI or as backend for physical weather displays. This repo has [nodemcu_oregon_tx.ino](./nodemcu_oregon_tx.ino) as an example of Arduino sketch for NodeMCU device that gets measurement data from API and transmits it using Oregon THN128 sensor protol to be displayed at compatible weather display. You also need 433MHz transmitter like FS100A or RFM85W-433D. In [depedencies](./dependencies) are links and snapshots to dependencies of Arduino sketch.
 
